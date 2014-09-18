@@ -1,11 +1,27 @@
-<html>
+<html ng-app="guessApp">
 <head>
+    <!-- Angular.JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+
+	<script src="guess.js"></script>
 
 </head>
 
-<body>
+<body ng-controller="guessController">
 <h1>Guess my number!</h1>
 
+<div>
+	<span style="border-style:solid" 
+	ng-repeat="n in getNumbers() track by $index" ng-click="check($index)"
+	ng-show="$index>=guessMin && $index<=guessMax" >{{ $index }}</span>
+</div>
+
+<div ng-show="guessMin==number || guessMax==number">
+	FOUND IT
+
+<div>
+	<button ng-click="newGame()">New Game</button>
+</div>
 </body>
 
 
