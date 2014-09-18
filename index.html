@@ -9,7 +9,7 @@
 
 <body ng-controller="guessController">
 <h1>Guess my number!</h1>
-
+<h3>Attempts: {{ attempts }}</h3>
 <div>
 	<span style="border-style:solid" 
 	ng-repeat="n in getNumbers() track by $index" ng-click="check($index)"
